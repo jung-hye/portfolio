@@ -52,7 +52,7 @@ html, body { height: 100%; }
 
 .profile_image { display: block; width: 75%; min-width: 130px; margin: 0 0 40px; }
 
-.profile__title { font-size: 1.2rem; margin: 0 0 20px; }
+.profile__title { margin: 0 0 20px; font-size: 1.2rem; }
 
 .profile__desc { margin: 0 0 .8em; font-size: 1rem; }
 
@@ -61,35 +61,45 @@ html, body { height: 100%; }
 /* main */
 .main { display: block; width: 85%; height: 100%; }
 
-.pf-list { display: flex; height: 100%; flex-wrap: wrap; justify-content: stretch; align-items: stretch; align-content: stretch; }
+.pf-list { display: flex; flex-wrap: wrap; height: 100%; }
 
-.pf-item { display: block; flex-basis: 0; flex-grow: 1; transition: all .5s ease; border-left: 1px solid #e5e5e5; }
+.pf-item { -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -ms-transition: all 0.5s ease; -o-transition: all 0.5s ease; transition: all 0.5s ease; display: block; flex-basis: 0; flex-grow: 1; border-left: 1px solid #e5e5e5; }
 
 .pf-item__link { display: flex; flex-direction: column; height: 100%; }
 
-.pf-item .text-wrapper { flex-basis: 70%; flex-grow: 0; height: 100%; padding: 2em 5em 0 1em; -webkit-box-sizing: border-box; box-sizing: border-box; transition: all 1s ease; }
+.pf-item .text-wrapper { -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -ms-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; flex-basis: 60%; flex-grow: 0; height: 100%; padding: 2em 5em 0 1em; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-.pf-item .image-wrapper { flex-basis: 30%; flex-grow: 0; width: 100%; height: 100%; margin: 0 auto; padding: 2em 2em 0 0; transition: all 1s ease; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.pf-item .image-wrapper { -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -ms-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; flex-basis: 40%; flex-grow: 0; width: 100%; height: 100%; margin: 0 auto; padding: 2em 2em 0 0; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-.pf-item__num { display: block; font-size: 4rem; margin-bottom: 1em; font-family: 'Lato'; font-weight: 500; transition: all .7s ease; color: #e5e5e5; font-family: 'Oswald'; }
+.pf-item__num { -webkit-transition: all 0.7s ease; -moz-transition: all 0.7s ease; -ms-transition: all 0.7s ease; -o-transition: all 0.7s ease; transition: all 0.7s ease; display: block; font-size: 4rem; margin-bottom: 1em; font-family: 'Lato'; font-weight: 500; font-family: 'Oswald'; color: #e5e5e5; }
 
-.pf-item__title { padding-bottom: .5em; font-size: 1.5rem; transition: all .7s ease; font-weight: 700; letter-spacing: .1em; }
+.pf-item__title { -webkit-transition: all 0.7s ease; -moz-transition: all 0.7s ease; -ms-transition: all 0.7s ease; -o-transition: all 0.7s ease; transition: all 0.7s ease; padding-bottom: .5em; font-size: 1.5rem; font-weight: 700; letter-spacing: .1em; }
 
 .pf-item__desc { padding-bottom: 1em; font-weight: 300; font-size: 1rem; }
 
 .pf-item__info-list { font-size: .9rem; font-weight: 300; color: #868e96; }
 
-.pf-item__photo { height: 100%; background-repeat: no-repeat; background-size: auto 102%; background-image: url(../images/thumbnail_primitive.jpg); background-position: 50% 50%; }
+.pf-item__photo { overflow: hidden; position: relative; height: 100%; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
+
+.item-01__photo { background-image: url(../images/thumbnail_primitive.jpg); }
+
+.item-02__photo { background-position: 50% 60%; background-image: url(../images/thumbnail_rova.jpg); }
+
+.item-03__photo { background-image: url(../images/thumbnail_rova.jpg); }
+
+.pf-item__photo img { position: absolute; top: 50%; left: 50%; height: 100%; transform: translate(-50%, -50%); }
 
 .pf-item:hover { flex-grow: 1.1; border-color: #333; }
 
-.pf-item:hover .text-wrapper { flex-basis: 60%; }
+.pf-item:hover .text-wrapper { flex-basis: 55%; }
 
-.pf-item:hover .image-wrapper { flex-basis: 40%; padding: 0; }
+.pf-item:hover .image-wrapper { flex-basis: 45%; padding: 0; }
 
 .pf-item:hover .pf-item__num { margin-bottom: 1em; color: #333; }
 
 .pf-item.item-01:hover .pf-item__num { color: #55227D; }
+
+.pf-item.item-02:hover .pf-item__num { color: #06686F; }
 
 .pf-item:hover .pf-item__title { font-size: 2rem; font-weight: 700; letter-spacing: .2em; }
 
