@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+// For Global
+@mixin vendorPrefix($property, $value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    #{$prefix}#{$property}: $value;
+  }
+}
+@mixin pxToRem($font-size) {
+  font-size: $font-size / $G-default-font-size + 0rem;
+}
+@mixin clearfix {
+  &::after {
+      content: '';
+      display: table;
+      clear: both;
+  }
+}
+@mixin getWidthPercent($col-num) {
+  $px-width: $G-grid-width * $col-num + $G-gutter-width * ($col-num - 1);
+  width: $px-width / $G-grid-max-width-desktop * 100 + 0%;
+}
+@mixin forBigDesktop {
+  @media (max-width: 1697px) { @content; }
+}
+@mixin forSmallDesktop {
+  @media (max-width: 1240px) { @content; }
+}
+@mixin forTablet {
+  @media (max-width: 1023px) { @content; }
+}
+@mixin forMobile {
+  @media (max-width: 767px) { @content; }
+}
+
+
+// Global Media Query
+@include forBigDesktop() {
+  html {
+  }
+}
+@include forSmallDesktop() {
+  html {
+
+  }
+}
+@include forTablet() {
+  html {
+    font-size:0.875rem;
+  }
+}
+@include forMobile() {
+  html {
+    // font-size:0.750rem;
+  }
+}
